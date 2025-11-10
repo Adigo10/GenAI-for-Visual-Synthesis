@@ -1,2 +1,3 @@
 /model
 unet_coco_best.pth
+.DS_Store
