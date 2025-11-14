@@ -43,12 +43,12 @@
 						<textarea id="vehiclePrompt" name="vehiclePrompt" rows="4" placeholder="e.g. gleaming midnight blue sports car, cinematic lighting, wet asphalt reflections" required></textarea>
 
 						<label for="vehicleNegative" class="field-label">Negative preset</label>
-						<select id="vehicleNegative" name="vehicleNegative">
-							<option value="blurry, unclear, low quality, distorted, duplicate, text, watermark, jpeg artifacts" selected>Balanced realism – blurry, unclear, low quality, duplicate artifacts</option>
-							<option value="cartoon, illustration, anime, cel shading, stylized, toy-like">No cartoon vibes – cartoon, illustration, anime, stylized assets</option>
-							<option value="rusted, damaged, broken parts, dents, scratches, dirty, mud, graffiti">Keep vehicle pristine – rusted or damaged bodywork, grime</option>
-							<option value="oversaturated, harsh shadows, blown highlights, uneven lighting, lens flare">Avoid harsh lighting – oversaturated or uneven lighting artifacts</option>
-						</select>
+					<select id="vehicleNegative" name="vehicleNegative">
+									<option value="blurry, low quality, distorted, ugly car, deformed vehicle" selected>Quality control – blur, low-res, distorted, artifacts</option>
+									<option value="cartoon, illustration, anime, cel shading, stylized, toy-like, comic">Photorealistic – no cartoons, anime, stylized renders</option>
+									<option value="rusted, damaged, dented, scratched, dirty, mud, rust, broken, weathered">Pristine condition – no rust, damage, dirt, wear</option>
+									<option value="oversaturated, blown highlights, harsh shadows, dark, underexposed, murky, dim">Balanced lighting – no blown highlights, harsh shadows, dark tones</option>
+								</select>
 					</section>
 
 					<section class="prompt-card">
@@ -57,12 +57,12 @@
 						<textarea id="backgroundPrompt" name="backgroundPrompt" rows="4" placeholder="e.g. neon-lit downtown street at dusk, rain-soaked pavement, cinematic bokeh" required></textarea>
 
 						<label for="backgroundNegative" class="field-label">Negative preset</label>
-						<select id="backgroundNegative" name="backgroundNegative">
-							<option value="blurry, unclear, low quality, distorted, duplicate, text, watermark, jpeg artifacts, washed out" selected>Balanced environment – blurry, unclear, duplicate, washed-out frames</option>
-							<option value="flat colors, dull lighting, empty scene, bland, grey tones, desaturated, lifeless">Keep it vibrant – flat colors, dull lighting, lifeless scenes</option>
-							<option value="crowded, busy, pedestrians, traffic, people, cars, buses, clutter">No extra people – busy crowds, traffic, clutter</option>
-							<option value="foggy, hazy, overexposed, blown highlights, lens flare, smoke, smog">Clear visibility – fog, haze, blown highlights, smoke</option>
-						</select>
+					<select id="backgroundNegative" name="backgroundNegative">
+									<option value="blurry, low quality, distorted, washed out, duplicate, text, watermark, jpeg artifacts, vehicles" selected>Quality control – blur, low-res, washed-out, distorted, vehicles</option>
+									<option value="flat colors, dull, desaturated, grey tones, lifeless, boring, empty, bland">Vibrant scene – no dull, grey, desaturated, lifeless tones</option>
+									<option value="crowded, busy, pedestrians, people, crowds, traffic, clutter, busy street">Clean background – no crowds, people, traffic, clutter</option>
+									<option value="foggy, hazy, overexposed, blown highlights, dark, murky, underexposed, smoke">Clear visibility – no fog, haze, blown highlights, dark, smoky</option>
+								</select>
 					</section>
 				</div>
 

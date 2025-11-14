@@ -38,7 +38,7 @@ if FRONTEND_DIR.exists():
 	app.mount("/frontend", StaticFiles(directory=FRONTEND_DIR), name="frontend")
 
 MODEL_FOLDER = BASE_DIR / "model"
-UNET_PATH = MODEL_FOLDER / "unet_coco_best.pth"
+UNET_PATH = MODEL_FOLDER / "unet_model_carvana_new.pth"
 SD_MODEL_PATH = (
 	MODEL_FOLDER
 	/ "stable-diffusion"

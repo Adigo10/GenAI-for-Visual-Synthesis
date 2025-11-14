@@ -1,11 +1,12 @@
-import torch
-import numpy as np
-from PIL import Image
 import gc
-import os
 import shutil
+from contextlib import contextmanager
 from pathlib import Path
 from typing import Optional
+
+import numpy as np
+import torch
+from PIL import Image
 
 # For Stable Diffusion inpainting
 from diffusers import StableDiffusionInpaintPipeline
@@ -13,6 +14,90 @@ from diffusers import StableDiffusionInpaintPipeline
 # Directory where pipeline images are stored
 BASE_DIR = Path(__file__).resolve().parent
 IMAGES_DIR = BASE_DIR / "images"
+
+IMAGE_SIZE = (256, 256)
+MASK_THRESHOLD = 0.3
+SD_GUIDANCE_SCALE = 10
+SD_INFERENCE_STEPS = 50
+
+VEHICLE_PROMPT_SUFFIX = ""
+BACKGROUND_PROMPT_SUFFIX = "high quality, cinematic lighting, photorealistic"
+
+
+def _resolve_output_dir(path: Optional[Path] = None) -> Path:
+    output_dir = Path(path) if path else IMAGES_DIR
+    output_dir.mkdir(parents=True, exist_ok=True)
+    return output_dir
+
+
+def _load_and_resize_image(img_path: str | Path, mode: str = "RGB") -> Image.Image:
+    return Image.open(img_path).convert(mode).resize(IMAGE_SIZE)
+
+
+def _image_to_tensor(image: Image.Image) -> torch.Tensor:
+    array = (np.array(image, dtype=np.float32) / 255.0).transpose(2, 0, 1)
+    return torch.from_numpy(array).unsqueeze(0)
+
+
+def _stitch_prompt(user_prompt: Optional[str], suffix: str) -> str:
+    """Append quality suffix to user prompt while avoiding duplicate commas."""
+    cleaned_prompt = (user_prompt or "").strip(" ,")
+    if cleaned_prompt and suffix:
+        return f"{cleaned_prompt}, {suffix}"
+    return cleaned_prompt or suffix
+
+
+def _save_mask(mask_array: np.ndarray, output_dir: Path, output_name: str) -> str:
+    mask_img = (mask_array > MASK_THRESHOLD).astype("uint8") * 255
+    mask_pil = Image.fromarray(mask_img).convert("L")
+    mask_output = output_dir / output_name
+    mask_pil.save(mask_output)
+    return str(mask_output)
+
+
+def _clear_torch_cache():
+    if torch.cuda.is_available():
+        torch.cuda.empty_cache()
+    gc.collect()
+
+
+def _load_unet(model_path) -> "UNet":
+    unet = UNet()
+    try:
+        state_dict = torch.load(model_path, map_location="cpu", weights_only=True)
+    except TypeError:
+        state_dict = torch.load(model_path, map_location="cpu")
+    unet.load_state_dict(state_dict)
+    unet.eval()
+    return unet
+
+
+@contextmanager
+def load_inpaint_pipeline(model_dir):
+    pipe = StableDiffusionInpaintPipeline.from_pretrained(
+        model_dir,
+        torch_dtype=torch.float32,
+        local_files_only=True
+    )
+
+    try:
+        import torch_directml
+        device = torch_directml.device()
+        pipe = pipe.to(device)
+        print("Using DirectML (AMD GPU)")
+    except Exception:
+        device = "cpu"
+        pipe = pipe.to(device)
+        print("Using CPU")
+
+    try:
+        yield pipe, device
+    finally:
+        del pipe
+        if device != "cpu":
+            _clear_torch_cache()
+        else:
+            gc.collect()
 
 
 def prepare_images_dir(images_dir: Optional[Path] = None):
@@ -120,32 +205,30 @@ class UNet(torch.nn.Module):
         out = torch.sigmoid(self.out(d1))
         return out
 
-def segment_image(img_path, model_path, output_dir: Optional[Path] = None, output_name: str = "stage1_mask.png"):
-    # Load model
-    unet = UNet()
-    unet.load_state_dict(torch.load(model_path, map_location="cpu", weights_only=True))
-    unet.eval()
 
-    image = Image.open(img_path).convert("RGB").resize((256, 256))
-    img_tensor = torch.tensor(
-        (np.array(image) / 255.0).transpose(2, 0, 1),
-        dtype=torch.float32
-    ).unsqueeze(0)
+def _segment_and_save_mask(
+    img_path,
+    model_path,
+    output_dir: Optional[Path],
+    output_name: str,
+):
+    output_dir = _resolve_output_dir(output_dir)
+    unet = _load_unet(model_path)
 
-    with torch.no_grad():
+    image = _load_and_resize_image(img_path)
+    img_tensor = _image_to_tensor(image)
+
+    with torch.inference_mode():
         mask = unet(img_tensor).squeeze().numpy()
-    mask_img = (mask > 0.5).astype("uint8") * 255
-    mask_pil = Image.fromarray(mask_img).convert("L")
-    # Save into images/ folder
-    output_dir = Path(output_dir) if output_dir else IMAGES_DIR
-    output_dir.mkdir(parents=True, exist_ok=True)
-    mask_output = output_dir / output_name
-    mask_pil.save(mask_output)
+
+    mask_path = _save_mask(mask, output_dir, output_name)
 
     del unet
-    torch.cuda.empty_cache()
-    gc.collect()
-    return str(mask_output)
+    _clear_torch_cache()
+    return mask_path
+
+def segment_image(img_path, model_path, output_dir: Optional[Path] = None, output_name: str = "stage1_mask.png"):
+    return _segment_and_save_mask(img_path, model_path, output_dir, output_name)
 
 # --- Step 2: Vehicle Regeneration (Stable Diffusion Inpainting) ---
 def regenerate_vehicle(img_path, mask_path, model_dir, prompt, negative_prompt="blurry, low quality, distorted, ugly car, deformed vehicle", output_dir: Optional[Path] = None, output_name: str = "stage2_vehicle.png"):
@@ -154,52 +237,27 @@ def regenerate_vehicle(img_path, mask_path, model_dir, prompt, negative_prompt="
     White in mask = vehicle to regenerate
     Black in mask = background to keep
     """
-    # Load Stable Diffusion Inpainting Pipeline
-    pipe = StableDiffusionInpaintPipeline.from_pretrained(
-        model_dir,
-        torch_dtype=torch.float32,
-        local_files_only=True
-    )
-    
-    # Use DirectML for AMD GPUs on Windows, or CPU
-    try:
-        import torch_directml
-        device = torch_directml.device()
-        pipe = pipe.to(device)
-        print("Using DirectML (AMD GPU)")
-    except:
-        device = "cpu"
-        pipe = pipe.to(device)
-        print("Using CPU")
+    full_prompt = _stitch_prompt(prompt, VEHICLE_PROMPT_SUFFIX)
 
-    # Load image and mask, resize to 256x256
-    image = Image.open(img_path).convert("RGB").resize((256, 256))
-    mask = Image.open(mask_path).convert("L").resize((256, 256))
-    
-    # Use mask directly: white = areas to regenerate (vehicle), black = keep (background)
-    # No inversion needed for vehicle regeneration
+    with load_inpaint_pipeline(model_dir) as (pipe, _):
+        image = _load_and_resize_image(img_path)
+        mask = _load_and_resize_image(mask_path, mode="L")
 
-    # Generate new vehicle with custom prompt
-    result_img = pipe(
-        prompt=prompt,
-        negative_prompt=negative_prompt,
-        mask_threshold=0.3,
-        image=image,
-        mask_image=mask,
-        num_inference_steps=50,
-        guidance_scale=10,
-        # strength=0.9  # Higher strength to fully replace the vehicle
-    ).images[0]
-    
-    output_dir = Path(output_dir) if output_dir else IMAGES_DIR
-    output_dir.mkdir(parents=True, exist_ok=True)
+        # Use mask directly: white = areas to regenerate (vehicle), black = keep (background)
+        result_img = pipe(
+            prompt=full_prompt,
+            negative_prompt=negative_prompt,
+            mask_threshold=MASK_THRESHOLD,
+            image=image,
+            mask_image=mask,
+            num_inference_steps=SD_INFERENCE_STEPS,
+            guidance_scale=SD_GUIDANCE_SCALE,
+        ).images[0]
+
+    output_dir = _resolve_output_dir(output_dir)
     vehicle_output = output_dir / output_name
     result_img.save(vehicle_output)
 
-    del pipe
-    if device != "cpu":
-        torch.cuda.empty_cache()
-    gc.collect()
     return result_img, str(vehicle_output)
 
 # --- Step 3: Re-segment the edited image ---
@@ -208,88 +266,40 @@ def segment_edited_image(img_path, model_path, output_dir: Optional[Path] = None
     Perform segmentation again on the edited vehicle image.
     This creates a fresh mask for the newly generated vehicle.
     """
-    # Load model
-    unet = UNet()
-    unet.load_state_dict(torch.load(model_path, map_location="cpu", weights_only=True))
-    unet.eval()
-
-    image = Image.open(img_path).convert("RGB").resize((256, 256))
-    img_tensor = torch.tensor(
-        (np.array(image) / 255.0).transpose(2, 0, 1),
-        dtype=torch.float32
-    ).unsqueeze(0)
-
-    with torch.no_grad():
-        mask = unet(img_tensor).squeeze().numpy()
-    mask_img = (mask > 0.5).astype("uint8") * 255
-    mask_pil = Image.fromarray(mask_img).convert("L")
-    # Ensure saved to images folder
-    output_dir = Path(output_dir) if output_dir else IMAGES_DIR
-    output_dir.mkdir(parents=True, exist_ok=True)
-    output_path = output_dir / output_name
-    mask_pil.save(output_path)
-
-    del unet
-    torch.cuda.empty_cache()
-    gc.collect()
-    
+    output_path = _segment_and_save_mask(img_path, model_path, output_dir, output_name)
     print(f"✓ Re-segmentation mask saved to: {output_path}")
-    return str(output_path)
+    return output_path
 
 # --- Step 4: Background Inpainting (Stable Diffusion) ---
-def inpaint_background(img_path, mask_path, model_dir, prompt="beautiful mountain road background, golden hour, scenic ocean view, high quality, photorealistic", negative_prompt="blurry, low quality, distorted, car, vehicle, text, watermark", output_dir: Optional[Path] = None, output_name: str = "stage4_final.png"):
+def inpaint_background(img_path, mask_path, model_dir, prompt: Optional[str] = None, negative_prompt="blurry, low quality, distorted, washed out, duplicate, text, watermark, jpeg artifacts, vehicles, cars", output_dir: Optional[Path] = None, output_name: str = "stage4_final.png"):
     """
     Use Stable Diffusion inpainting to fill in the background (black zone of mask).
     Black in mask = background to inpaint
     White in mask = foreground to keep
     """
-    # Load Stable Diffusion Inpainting Pipeline
-    pipe = StableDiffusionInpaintPipeline.from_pretrained(
-        model_dir,
-        torch_dtype=torch.float32,
-        local_files_only=True
-    )
-    
-    # Use DirectML for AMD GPUs on Windows, or CPU
-    try:
-        import torch_directml
-        device = torch_directml.device()
-        pipe = pipe.to(device)
-        print("Using DirectML (AMD GPU)")
-    except:
-        device = "cpu"
-        pipe = pipe.to(device)
-        print("Using CPU")
+    full_prompt = _stitch_prompt(prompt, BACKGROUND_PROMPT_SUFFIX)
 
-    # Load image and mask, resize to 256x256
-    image = Image.open(img_path).convert("RGB").resize((256, 256))
-    mask = Image.open(mask_path).convert("L").resize((256, 256))
-    
-    # Invert mask: white = areas to inpaint (background/black zone), black = keep (foreground/white zone)
-    mask_array = np.array(mask)
-    inverted_mask = 255 - mask_array
-    mask_inverted = Image.fromarray(inverted_mask).convert("L")
+    with load_inpaint_pipeline(model_dir) as (pipe, _):
+        image = _load_and_resize_image(img_path)
+        mask = _load_and_resize_image(mask_path, mode="L")
 
-    # Generate inpainted background
-    result_img = pipe(
-        prompt=prompt,
-        negative_prompt=negative_prompt,
-        image=image,
-        mask_image=mask_inverted,
-        num_inference_steps=50,
-        guidance_scale=10
-    ).images[0]
-    
-    output_dir = Path(output_dir) if output_dir else IMAGES_DIR
-    output_dir.mkdir(parents=True, exist_ok=True)
+        mask_array = np.array(mask)
+        inverted_mask = 255 - mask_array
+        mask_inverted = Image.fromarray(inverted_mask).convert("L")
+
+        result_img = pipe(
+            prompt=full_prompt,
+            negative_prompt=negative_prompt,
+            image=image,
+            mask_image=mask_inverted,
+            num_inference_steps=SD_INFERENCE_STEPS,
+            guidance_scale=SD_GUIDANCE_SCALE
+        ).images[0]
+
+    output_dir = _resolve_output_dir(output_dir)
     final_output = output_dir / output_name
     result_img.save(final_output)
 
-    del pipe
-    if device != "cpu":
-        torch.cuda.empty_cache()
-    gc.collect()
-    
     print(f"✓ Final image with inpainted background saved to: {final_output}")
     return result_img, str(final_output)
 
@@ -299,7 +309,7 @@ if __name__ == "__main__":
     model_folder = BASE_DIR / "model"
     
     # Path to UNet model for segmentation
-    unet_path = model_folder / "unet_coco_best.pth"
+    unet_path = model_folder / "unet_model_carvana_new.pth"
     
     # Path to Stable Diffusion model
     sd_model_path = (
@@ -324,8 +334,8 @@ if __name__ == "__main__":
     # Stage 2: Vehicle Regeneration/Editing
     print("\n[Stage 2] Regenerating vehicle with Stable Diffusion...")
     print("Purpose: Generate edits for the car/vehicle")
-    vehicle_prompt = "black sedan car, photorealistic, high quality, detailed"
-    vehicle_img, vehicle_path = regenerate_vehicle(img_path, mask_path, sd_model_path, prompt=vehicle_prompt)
+    vehicle_prompt_input = "sleek sports coupe"  # Replace with user-provided prompt text
+    vehicle_img, vehicle_path = regenerate_vehicle(img_path, mask_path, sd_model_path, prompt=vehicle_prompt_input)
     print(f"✓ Edited vehicle image saved to: {vehicle_path}")
 
     # Stage 3: Re-segmentation on edited image
@@ -336,7 +346,8 @@ if __name__ == "__main__":
     # Stage 4: Final Background Inpainting
     print("\n[Stage 4] Inpainting background with Stable Diffusion...")
     print("Purpose: Generate new background around the edited vehicle")
-    final_img, final_path = inpaint_background(vehicle_path, new_mask_path, sd_model_path)
+    background_prompt_input = "sunlit alpine highway"  # Replace with user-provided background prompt
+    final_img, final_path = inpaint_background(vehicle_path, new_mask_path, sd_model_path, prompt=background_prompt_input)
 
     print("\n" + "="*60)
     print(f"🎉 Pipeline complete! Final image: {final_path}")
