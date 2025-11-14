@@ -66,6 +66,8 @@
 					</section>
 				</div>
 
+				<button type="submit" class="primary-action" id="runButton">Run Pipeline</button>
+
 				<section class="info-card pipeline-flow">
 					<h3>Pipeline Flow</h3>
 					<ol>
@@ -98,8 +100,6 @@
 						<li><strong>Run isolation</strong> keeps every API session in its own folder for easy comparisons.</li>
 					</ul>
 				</section>
-
-				<button type="submit" class="primary-action" id="runButton">Run Pipeline</button>
 			</form>
 
 			<section class="panel output-panel">
@@ -107,7 +107,7 @@
 				<p class="panel-subtext">Preview each step as it completes. Results update live while the pipeline runs.</p>
 
 				<div class="stage-grid" id="stageGrid">
-					<article class="stage-card" data-stage="1">
+					<article class="stage-card" data-stage="1" hidden>
 						<header>
 							<span class="stage-tag">Stage 1</span>
 							<h3>Segmentation Mask</h3>
@@ -119,7 +119,7 @@
 						<p class="stage-note">UNet isolates the vehicle silhouette.</p>
 					</article>
 
-					<article class="stage-card" data-stage="2">
+					<article class="stage-card" data-stage="2" hidden>
 						<header>
 							<span class="stage-tag">Stage 2</span>
 							<h3>Vehicle Re-render</h3>
@@ -131,7 +131,7 @@
 						<p class="stage-note">Stable diffusion redraws the car using your prompt.</p>
 					</article>
 
-					<article class="stage-card" data-stage="3">
+					<article class="stage-card" data-stage="3" hidden>
 						<header>
 							<span class="stage-tag">Stage 3</span>
 							<h3>Refined Mask</h3>
@@ -143,7 +143,7 @@
 						<p class="stage-note">Fresh mask tuned to the edited vehicle.</p>
 					</article>
 
-					<article class="stage-card" data-stage="4">
+					<article class="stage-card" data-stage="4" hidden>
 						<header>
 							<span class="stage-tag">Stage 4</span>
 							<h3>Final Composite</h3>

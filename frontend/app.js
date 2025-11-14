@@ -37,6 +37,21 @@ const showToast = (message, tone = "info", duration = 4000) => {
 const getStageCard = (stageNumber) =>
 	stageGrid.querySelector(`.stage-card[data-stage="${stageNumber}"]`);
 
+const reorderStagesDescending = () => {
+	const cards = Array.from(stageGrid.children);
+	const sorted = cards.sort((a, b) => Number(b.dataset.stage) - Number(a.dataset.stage));
+	sorted.forEach((card) => stageGrid.appendChild(card));
+};
+
+const setStageVisibility = (stageNumber, isVisible) => {
+	const card = getStageCard(stageNumber);
+	if (!card) return;
+	card.hidden = !isVisible;
+	if (isVisible) {
+		reorderStagesDescending();
+	}
+};
+
 const setStageLoading = (stageNumber, isLoading) => {
 	const card = getStageCard(stageNumber);
 	if (!card) return;
@@ -59,6 +74,7 @@ const setStageLoading = (stageNumber, isLoading) => {
 const setStageImage = (stageNumber, base64Payload) => {
 	const card = getStageCard(stageNumber);
 	if (!card) return;
+	setStageVisibility(stageNumber, true);
 	const shell = card.querySelector(".image-shell");
 	const img = shell.querySelector("img");
 	img.src = `data:image/png;base64,${base64Payload}`;
@@ -67,21 +83,15 @@ const setStageImage = (stageNumber, base64Payload) => {
 
 const resetStages = () => {
 	[1, 2, 3, 4].forEach((stage) => {
-		const card = getStageCard(stage);
-		const shell = card.querySelector(".image-shell");
-		const img = shell.querySelector("img");
-		img.src = "";
-		img.hidden = true;
-		const spinner = shell.querySelector(".spinner");
-		spinner.style.display = "block";
-		shell.classList.add("loading");
+		setStageVisibility(stage, false);
+		setStageLoading(stage, true);
 	});
+	reorderStagesDescending();
 };
 
-const reorderStagesDescending = () => {
-	const cards = Array.from(stageGrid.children);
-	const sorted = cards.sort((a, b) => Number(b.dataset.stage) - Number(a.dataset.stage));
-	sorted.forEach((card) => stageGrid.appendChild(card));
+const beginStage = (stageNumber) => {
+	setStageVisibility(stageNumber, true);
+	setStageLoading(stageNumber, true);
 };
 
 const readFilePreview = (file) => {
@@ -186,18 +196,22 @@ const runPipeline = async (event) => {
 			throw new Error("Both prompts are required to begin the pipeline.");
 		}
 
+		beginStage(1);
 		const stage1 = await runStage1(selectedFile);
 		setStageImage(1, stage1.image);
 		setStatus("Rendering vehicle", "busy");
 
+		beginStage(2);
 		const stage2 = await runStage2(stage1.run_id, vehiclePrompt, vehicleNegative);
 		setStageImage(2, stage2.image);
 		setStatus("Analyzing edited vehicle", "busy");
 
+		beginStage(3);
 		const stage3 = await runStage3(stage1.run_id);
 		setStageImage(3, stage3.image);
 		setStatus("Inpainting background", "busy");
 
+		beginStage(4);
 		const stage4 = await runStage4(stage1.run_id, backgroundPrompt, backgroundNegative);
 		setStageImage(4, stage4.image);
 		reorderStagesDescending();

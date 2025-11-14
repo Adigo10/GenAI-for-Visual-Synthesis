@@ -16,12 +16,12 @@ BASE_DIR = Path(__file__).resolve().parent
 IMAGES_DIR = BASE_DIR / "images"
 
 IMAGE_SIZE = (256, 256)
-MASK_THRESHOLD = 0.3
+MASK_THRESHOLD = 0.3    
 SD_GUIDANCE_SCALE = 10
 SD_INFERENCE_STEPS = 50
 
 VEHICLE_PROMPT_SUFFIX = ""
-BACKGROUND_PROMPT_SUFFIX = "high quality, cinematic lighting, photorealistic"
+BACKGROUND_PROMPT_SUFFIX = "high quality, realistic"
 
 
 def _resolve_output_dir(path: Optional[Path] = None) -> Path:

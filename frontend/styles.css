@@ -356,6 +356,10 @@ select:focus {
 	position: relative;
 }
 
+.stage-card[hidden] {
+	display: none;
+}
+
 .stage-card header {
 	display: flex;
 	flex-direction: column;
