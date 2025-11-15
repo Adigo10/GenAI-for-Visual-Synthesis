@@ -17,7 +17,7 @@ IMAGES_DIR = BASE_DIR / "images"
 
 IMAGE_SIZE = (256, 256)
 MASK_THRESHOLD = 0.3    
-SD_GUIDANCE_SCALE = 10
+SD_GUIDANCE_SCALE = 8
 SD_INFERENCE_STEPS = 50
 
 VEHICLE_PROMPT_SUFFIX = ""
@@ -247,7 +247,6 @@ def regenerate_vehicle(img_path, mask_path, model_dir, prompt, negative_prompt="
         result_img = pipe(
             prompt=full_prompt,
             negative_prompt=negative_prompt,
-            mask_threshold=MASK_THRESHOLD,
             image=image,
             mask_image=mask,
             num_inference_steps=SD_INFERENCE_STEPS,

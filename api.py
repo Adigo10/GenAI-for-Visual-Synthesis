@@ -42,7 +42,7 @@ UNET_PATH = MODEL_FOLDER / "unet_model_carvana_new.pth"
 SD_MODEL_PATH = (
 	MODEL_FOLDER
 	/ "stable-diffusion"
-	/ "models--runwayml--stable-diffusion-v1-5"
+ 	/ "models--runwayml--stable-diffusion-v1-5"
 	/ "snapshots"
 	/ "451f4fe16113bff5a5d2269ed5ad43b0592e9a14"
 )
