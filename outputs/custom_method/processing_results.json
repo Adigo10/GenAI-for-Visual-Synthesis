@@ -1,527 +1,602 @@
 [
   {
     "image": "000aa097d423_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_000aa097d423_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_000aa097d423_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_000aa097d423_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a white car parked in a garage",
+    "source_subject": "a white car parked in a garage",
+    "target_subject": "\"a white car parked in a garage\""
   },
   {
     "image": "00ad56bf7ee6_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_00ad56bf7ee6_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_00ad56bf7ee6_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_00ad56bf7ee6_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a gray car",
+    "source_subject": "a gray car",
+    "target_subject": "\"a gray car\""
   },
   {
     "image": "00afb946a54c_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_00afb946a54c_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_00afb946a54c_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_00afb946a54c_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a gray nissan rogue suv parked in a white room",
+    "source_subject": "A gray nissan rogue suv parked in a white room.",
+    "target_subject": "\"A gray nissan rogue suv parked in a white room.\""
   },
   {
     "image": "00b6aee52419_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_00b6aee52419_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_00b6aee52419_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_00b6aee52419_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a white car with a black top",
+    "source_subject": "a white car with a black top",
+    "target_subject": "a white car with a black top"
   },
   {
     "image": "00c07d49f4c5_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_00c07d49f4c5_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_00c07d49f4c5_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_00c07d49f4c5_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a white toyota prio",
+    "source_subject": "a white toyota prio",
+    "target_subject": "\"a white toyota prio\""
   },
   {
     "image": "00d3de919651_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_00d3de919651_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_00d3de919651_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_00d3de919651_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a gray car is parked in a white room",
+    "source_subject": "A gray car is parked in a white room.",
+    "target_subject": "\"A gray car is parked in a white room.\""
   },
   {
     "image": "0a0e3fb8f782_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0a0e3fb8f782_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0a0e3fb8f782_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0a0e3fb8f782_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a black and silver car",
+    "source_subject": "A black and silver car.",
+    "target_subject": "A black and silver car."
   },
   {
     "image": "0a2637c772c5_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0a2637c772c5_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0a2637c772c5_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0a2637c772c5_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a black car parked in a white room",
+    "source_subject": "A black car parked in a white room.",
+    "target_subject": "A black car parked in a white room."
   },
   {
     "image": "0a2bbd5330a2_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0a2bbd5330a2_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0a2bbd5330a2_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0a2bbd5330a2_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a red car parked in a parking lot",
+    "source_subject": "A red car parked in a parking lot.",
+    "target_subject": "\"A red car parked in a parking lot.\""
   },
   {
     "image": "0a382e5373db_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0a382e5373db_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0a382e5373db_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0a382e5373db_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "the carvanaa logo is on the wall",
+    "source_subject": "\"the carvanaa logo is on the wall\"",
+    "target_subject": "\"\"the carvanaa logo is on the wall\"\""
   },
   {
     "image": "0a39129c9f62_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0a39129c9f62_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0a39129c9f62_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0a39129c9f62_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a black car parked in a garage",
+    "source_subject": "A black car parked in a garage.",
+    "target_subject": "A black car parked in a garage."
   },
   {
     "image": "0a392275c87d_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0a392275c87d_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0a392275c87d_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0a392275c87d_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a black nissan suv parked in a parking lot",
+    "source_subject": "a black nissan suv parked in a parking lot",
+    "target_subject": "\"a black nissan suv parked in a parking lot\""
   },
   {
     "image": "0a63454298b8_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0a63454298b8_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0a63454298b8_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0a63454298b8_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a red car parked in a parking lot",
+    "source_subject": "A red car parked in a parking lot.",
+    "target_subject": "\"A red car parked in a parking lot.\""
   },
   {
     "image": "0a6636643495_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0a6636643495_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0a6636643495_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0a6636643495_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a white car parked in a garage",
+    "source_subject": "a white car parked in a garage",
+    "target_subject": "\"a white car parked in a garage\""
   },
   {
     "image": "0a732faadfe8_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0a732faadfe8_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0a732faadfe8_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0a732faadfe8_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a white chevrolet suv parked in a garage",
+    "source_subject": "A white chevrolet suv parked in a garage.",
+    "target_subject": "\"A white chevrolet suv parked in a garage.\""
   },
   {
     "image": "0a84dac5df69_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0a84dac5df69_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0a84dac5df69_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0a84dac5df69_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a small car is parked in a garage",
+    "source_subject": "A small car is parked in a garage.",
+    "target_subject": "\"A small car is parked in a garage.\""
   },
   {
     "image": "0a92461d365d_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0a92461d365d_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0a92461d365d_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0a92461d365d_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a black suv parked in a white room",
+    "source_subject": "a black suv parked in a white room",
+    "target_subject": "\"a black suv parked in a white room\""
   },
   {
     "image": "0a943856ea46_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0a943856ea46_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0a943856ea46_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0a943856ea46_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "the new 2017 kia kia kia kia kia kia kia kia kia kia kia kia kia kia kia kia kia kia",
+    "source_subject": "\"the new 2017 kia kia kia kia kia kia kia kia kia kia kia kia kia kia kia",
+    "target_subject": "\"\"the new 2017 kia kia kia kia kia kia kia kia kia kia kia kia kia kia ki"
   },
   {
     "image": "0aa52c458e8a_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0aa52c458e8a_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0aa52c458e8a_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0aa52c458e8a_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a white car",
+    "source_subject": "a white car",
+    "target_subject": "\"a white car\""
   },
   {
     "image": "0aa83daa6f78_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0aa83daa6f78_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0aa83daa6f78_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0aa83daa6f78_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a white bmw suv parked in a white room",
+    "source_subject": "a white bmw suv parked in a white room",
+    "target_subject": "\"a white bmw suv parked in a white room\""
   },
   {
     "image": "0ab2e2edfa32_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0ab2e2edfa32_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0ab2e2edfa32_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0ab2e2edfa32_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a white car parked in a white room",
+    "source_subject": "a white car parked in a white room",
+    "target_subject": "\"a white car parked in a white room\""
   },
   {
     "image": "0ab40a2fd4fc_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0ab40a2fd4fc_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0ab40a2fd4fc_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0ab40a2fd4fc_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a blue car",
+    "source_subject": "a blue car",
+    "target_subject": "\"a blue car\""
   },
   {
     "image": "0acfffdf94d1_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0acfffdf94d1_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0acfffdf94d1_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0acfffdf94d1_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a blue car parked in a garage",
+    "source_subject": "a blue car parked in a garage",
+    "target_subject": "\"a blue car parked in a garage\""
   },
   {
     "image": "0ad66cb03617_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0ad66cb03617_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0ad66cb03617_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0ad66cb03617_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a white nissan suv",
+    "source_subject": "a white nissan suv",
+    "target_subject": "\"a white nissan suv\""
   },
   {
     "image": "0adb31665745_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0adb31665745_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0adb31665745_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0adb31665745_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a black aca car parked in a garage",
+    "source_subject": "a black aca car parked in a garage",
+    "target_subject": "\"a black aca car parked in a garage\""
   },
   {
     "image": "0add11a25ebb_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0add11a25ebb_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0add11a25ebb_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0add11a25ebb_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a gray car parked in a garage",
+    "source_subject": "A gray car parked in a garage.",
+    "target_subject": "A gray car parked in a garage."
   },
   {
     "image": "0afd3707d6ce_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0afd3707d6ce_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0afd3707d6ce_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0afd3707d6ce_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a black car",
+    "source_subject": "a black car",
+    "target_subject": "\"a black car\""
   },
   {
     "image": "0b033553a58a_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0b033553a58a_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0b033553a58a_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0b033553a58a_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a black buick car is parked in a white room",
+    "source_subject": "A black Buick car is parked in a white room.",
+    "target_subject": "\"A black Buick car is parked in a white room.\""
   },
   {
     "image": "0b0724a78f90_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0b0724a78f90_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0b0724a78f90_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0b0724a78f90_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a white mercedes car is parked in a garage",
+    "source_subject": "a white mercedes car is parked in a garage",
+    "target_subject": "\"a white Mercedes car is parked in a garage\""
   },
   {
     "image": "0b352a7001b1_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0b352a7001b1_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0b352a7001b1_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0b352a7001b1_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a small car is parked in a garage",
+    "source_subject": "A small car is parked in a garage.",
+    "target_subject": "\"A small car is parked in a garage.\""
   },
   {
     "image": "0b42a5d3dfa0_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0b42a5d3dfa0_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0b42a5d3dfa0_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0b42a5d3dfa0_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a black car is parked in a white room",
+    "source_subject": "a black car is parked in a white room",
+    "target_subject": "\"a black car is parked in a white room\""
   },
   {
     "image": "0b42c8d2842c_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0b42c8d2842c_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0b42c8d2842c_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0b42c8d2842c_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a white car",
+    "source_subject": "a white car",
+    "target_subject": "\"a white car\""
   },
   {
     "image": "0b46410ba9b2_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0b46410ba9b2_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0b46410ba9b2_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0b46410ba9b2_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a brown buick suv",
+    "source_subject": "a brown buick suv",
+    "target_subject": "\"a brown buick suv\""
   },
   {
     "image": "0b6c1ec65b57_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0b6c1ec65b57_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0b6c1ec65b57_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0b6c1ec65b57_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "mercedes ml ml ml ml ml ml ml ml ml ml ml ml ml ml ml ml ml ml ml ml",
+    "source_subject": "Mercedes ml ml ml ml ml ml ml ml ml ml ml ml ml ml ml ml",
+    "target_subject": "Mercedes ml ml ml ml ml ml ml ml ml ml ml ml ml ml ml ml"
   },
   {
     "image": "0b73517ef85b_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0b73517ef85b_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0b73517ef85b_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0b73517ef85b_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a gray dodge suv parked in a parking lot",
+    "source_subject": "A gray dodge suv parked in a parking lot.",
+    "target_subject": "\"A gray dodge suv parked in a parking lot.\""
   },
   {
     "image": "0b8d3844583f_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0b8d3844583f_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0b8d3844583f_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0b8d3844583f_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a red suv",
+    "source_subject": "a red suv",
+    "target_subject": "\"a red suv\""
   },
   {
     "image": "0b9d03ec6720_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0b9d03ec6720_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0b9d03ec6720_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0b9d03ec6720_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a blue toyota pri",
+    "source_subject": "a blue toyota pri",
+    "target_subject": "a blue toyota pri"
   },
   {
     "image": "0baa53d612d9_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0baa53d612d9_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0baa53d612d9_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0baa53d612d9_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a red car",
+    "source_subject": "a red car",
+    "target_subject": "\"a red car\""
   },
   {
     "image": "0baa6b9543dc_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0baa6b9543dc_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0baa6b9543dc_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0baa6b9543dc_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a gray honda crv is parked in a garage",
+    "source_subject": "A gray honda crv is parked in a garage.",
+    "target_subject": "\"A gray honda crv is parked in a garage.\""
   },
   {
     "image": "0bb87dac6ad9_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0bb87dac6ad9_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0bb87dac6ad9_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0bb87dac6ad9_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a white car is parked in a garage",
+    "source_subject": "a white car is parked in a garage",
+    "target_subject": "\"a white car is parked in a garage\""
   },
   {
     "image": "0bd04c75ec17_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0bd04c75ec17_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0bd04c75ec17_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0bd04c75ec17_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a small car parked in a white room",
+    "source_subject": "A small car parked in a white room.",
+    "target_subject": "A small car parked in a white room."
   },
   {
     "image": "0bd2d5c4755e_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0bd2d5c4755e_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0bd2d5c4755e_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0bd2d5c4755e_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a black car parked in a garage",
+    "source_subject": "A black car parked in a garage.",
+    "target_subject": "A black car parked in a garage."
   },
   {
     "image": "0bdb8b1cba05_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0bdb8b1cba05_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0bdb8b1cba05_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0bdb8b1cba05_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a red toyota tacoma truck parked in a white room",
+    "source_subject": "A red toyota tacoma truck parked in a white room.",
+    "target_subject": "\"A red toyota tacoma truck parked in a white room.\""
   },
   {
     "image": "0bdd2e625f8a_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0bdd2e625f8a_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0bdd2e625f8a_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0bdd2e625f8a_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a black car parked in a white room",
+    "source_subject": "A black car parked in a white room.",
+    "target_subject": "A black car parked in a white room."
   },
   {
     "image": "0bdfb9967be2_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0bdfb9967be2_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0bdfb9967be2_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0bdfb9967be2_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "the new honda fito",
+    "source_subject": "The new honda fito is a sedan.",
+    "target_subject": "\"The new honda fito is a sedan.\""
   },
   {
     "image": "0be425f3f46a_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0be425f3f46a_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0be425f3f46a_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0be425f3f46a_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a black buick suv parked in a parking lot",
+    "source_subject": "A black Buick Suv parked in a parking lot.",
+    "target_subject": "\"A black Buick Suv parked in a parking lot.\""
   },
   {
     "image": "0be7717e4b2a_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0be7717e4b2a_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0be7717e4b2a_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0be7717e4b2a_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a white toyota car",
+    "source_subject": "a white toyota car",
+    "target_subject": "\"a white toyota car\""
   },
   {
     "image": "0bf768bbffae_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0bf768bbffae_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0bf768bbffae_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0bf768bbffae_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "used 2016 mercedes cla for sale in westport, ct",
+    "source_subject": "Used 2016 Mercedes cla for sale in westport, ct",
+    "target_subject": "\"Used 2016 Mercedes cla for sale in westport, ct\""
   },
   {
     "image": "0c1bc2f3012d_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0c1bc2f3012d_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0c1bc2f3012d_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0c1bc2f3012d_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a black honda civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic",
+    "source_subject": "A black honda civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic",
+    "target_subject": "A black honda civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic civic"
   },
   {
     "image": "0c3481991be4_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0c3481991be4_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0c3481991be4_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0c3481991be4_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "honda jazz 1 5p",
+    "source_subject": "honda jazz 1 5p",
+    "target_subject": "\"honda jazz 1 5p\" Focus on: modern style, premium quality, visual appeal. Keep it concise."
   },
   {
     "image": "0c4659adc7e4_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0c4659adc7e4_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0c4659adc7e4_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0c4659adc7e4_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "used toyota camar for sale in houston tx",
+    "source_subject": "Used toyota camar for sale in houston tx",
+    "target_subject": "\"Used toyota camar for sale in houston tx\""
   },
   {
     "image": "0c56c040a690_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0c56c040a690_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0c56c040a690_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0c56c040a690_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a white car is parked in a garage",
+    "source_subject": "a white car is parked in a garage",
+    "target_subject": "\"a white car is parked in a garage\""
   },
   {
     "image": "0c73bef70ead_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0c73bef70ead_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0c73bef70ead_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0c73bef70ead_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "audi audi audi audi cars for sale in canada",
+    "source_subject": "\"audi audi audi cars for sale in canada\"",
+    "target_subject": "\"audi audi cars for sale in canada\""
   },
   {
     "image": "0c74f69414ef_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0c74f69414ef_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0c74f69414ef_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0c74f69414ef_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a black jeep",
+    "source_subject": "a black jeep",
+    "target_subject": "a black jeep"
   },
   {
     "image": "0c833722fc9d_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0c833722fc9d_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0c833722fc9d_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0c833722fc9d_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a black mercedes c350",
+    "source_subject": "A black mercedes c350",
+    "target_subject": "A black mercedes c350"
   },
   {
     "image": "0c8f105618d4_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0c8f105618d4_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0c8f105618d4_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0c8f105618d4_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a white nissan car is parked in a garage",
+    "source_subject": "a white nissan car is parked in a garage",
+    "target_subject": "\"a white nissan car is parked in a garage\""
   },
   {
     "image": "0c9265af0ddf_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0c9265af0ddf_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0c9265af0ddf_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0c9265af0ddf_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a gray suv",
+    "source_subject": "a gray suv",
+    "target_subject": "\"a gray suv\""
   },
   {
     "image": "0c992d7d6742_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0c992d7d6742_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0c992d7d6742_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0c992d7d6742_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "used 2012 lexus for sale in the united",
+    "source_subject": "used 2012 lexus for sale in the united",
+    "target_subject": "\"used 2012 lexus for sale in the united\""
   },
   {
     "image": "0c9a9ab8fbd2_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0c9a9ab8fbd2_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0c9a9ab8fbd2_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0c9a9ab8fbd2_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a black volkswagen car is parked in a garage",
+    "source_subject": "a black volkswagen car is parked in a garage",
+    "target_subject": "\"a black volkswagen car is parked in a garage\""
   },
   {
     "image": "0ca342108368_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0ca342108368_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0ca342108368_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0ca342108368_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "mercedes gla gla gla gla gla gla gla gla gla gla gla gla gla gla gla gla gla gla gla gla gla gla gla gla",
+    "source_subject": "Mercedes gla gla gla gla gla gla gla gla gla gla gla gla gla gla gla gla gla gla gla gla gla gla gla gla",
+    "target_subject": "Mercedes gla gla gla gla gla gla gla gla gla gla gla gla gla gla gla gla gla gla gla gla gla gla gla gla"
   },
   {
     "image": "0cce02afe3a5_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0cce02afe3a5_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0cce02afe3a5_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0cce02afe3a5_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "mazda mazda carvana",
+    "source_subject": "mazda mazda carvana",
+    "target_subject": "\"mazda mazda carvana\""
   },
   {
     "image": "0cd58c993763_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0cd58c993763_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0cd58c993763_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0cd58c993763_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a white car parked in a garage",
+    "source_subject": "a white car parked in a garage",
+    "target_subject": "\"a white car parked in a garage\""
   },
   {
     "image": "0cd9dc1a1681_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0cd9dc1a1681_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0cd9dc1a1681_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0cd9dc1a1681_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a blue car",
+    "source_subject": "a blue car",
+    "target_subject": "\"a blue car\""
   },
   {
     "image": "0cdfe597590f_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0cdfe597590f_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0cdfe597590f_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0cdfe597590f_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a black mazda car",
+    "source_subject": "a black mazda car",
+    "target_subject": "\"a black mazda car\""
   },
   {
     "image": "0ce36c1e1d16_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0ce36c1e1d16_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0ce36c1e1d16_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0ce36c1e1d16_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a silver truck",
+    "source_subject": "a silver truck",
+    "target_subject": "\"a silver truck\""
   },
   {
     "image": "0cf8dfddfe3c_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0cf8dfddfe3c_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0cf8dfddfe3c_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0cf8dfddfe3c_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "honda accord coupe",
+    "source_subject": "honda accord coupe",
+    "target_subject": "Focus on: modern style, premium quality, visual appeal"
   },
   {
     "image": "0d04a7b8c4bf_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0d04a7b8c4bf_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0d04a7b8c4bf_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0d04a7b8c4bf_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a red car",
+    "source_subject": "a red car",
+    "target_subject": "\"a red car\""
   },
   {
     "image": "0d0be8f77fa8_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0d0be8f77fa8_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0d0be8f77fa8_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0d0be8f77fa8_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a red car parked in a garage",
+    "source_subject": "a red car parked in a garage",
+    "target_subject": "\"a red car parked in a garage\""
   },
   {
     "image": "0d24b7bea210_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0d24b7bea210_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0d24b7bea210_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0d24b7bea210_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a blue dodge challenger car on a white surface",
+    "source_subject": "a blue dodge challenger car on a white surface",
+    "target_subject": "\"a blue dodge challenger car on a white surface\""
   },
   {
     "image": "0d4b67f458bb_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0d4b67f458bb_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0d4b67f458bb_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0d4b67f458bb_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "the red car is parked in a white room",
+    "source_subject": "The red car is parked in a white room.",
+    "target_subject": "\"The red car is parked in a white room.\""
   },
   {
     "image": "0d549ae73675_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0d549ae73675_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0d549ae73675_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0d549ae73675_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "used 2013 hyundai santa fe for sale in the bronx",
+    "source_subject": "Used 2013 hyundai santa fe for sale in the bronx",
+    "target_subject": "\"Used 2013 hyundai santa fe for sale in the bronx\""
   },
   {
     "image": "0d851b7c73f4_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0d851b7c73f4_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0d851b7c73f4_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0d851b7c73f4_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a white chevrolet suv parked in a garage",
+    "source_subject": "A white chevrolet suv parked in a garage.",
+    "target_subject": "\"A white chevrolet suv parked in a garage.\""
   },
   {
     "image": "0d97ffd34927_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0d97ffd34927_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0d97ffd34927_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0d97ffd34927_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a red car parked in front of a sign",
+    "source_subject": "a red car parked in front of a sign",
+    "target_subject": "\"a red car parked in front of a sign\""
   },
   {
     "image": "0d9d1a5c7e0c_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0d9d1a5c7e0c_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0d9d1a5c7e0c_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0d9d1a5c7e0c_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a black honda car",
+    "source_subject": "A black honda car.",
+    "target_subject": "\"A black honda car.\""
   },
   {
     "image": "0d9ed6bc4c7b_03.jpg",
-    "status": "success",
-    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0d9ed6bc4c7b_03.jpg",
-    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0d9ed6bc4c7b_03.jpg",
-    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0d9ed6bc4c7b_03.jpg"
+    "status": "error",
+    "error": "regenerate_vehicle() got an unexpected keyword argument 'target_prompt'",
+    "original_caption": "a silver toyota prio",
+    "source_subject": "a silver toyota prio",
+    "target_subject": "\"a silver toyota prio\""
   }
 ]
