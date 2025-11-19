@@ -25,6 +25,17 @@ SD_INFERENCE_STEPS = 50
 VEHICLE_PROMPT_SUFFIX = ""
 BACKGROUND_PROMPT_SUFFIX = "high quality, realistic"
 
+# Global pipeline for reuse
+_global_pipeline = None
+_global_device = None
+
+
+def set_global_pipeline(pipeline, device):
+    """Set the global pipeline for reuse."""
+    global _global_pipeline, _global_device
+    _global_pipeline = pipeline
+    _global_device = device
+
 
 def _resolve_output_dir(path: Optional[Path] = None) -> Path:
     output_dir = Path(path) if path else IMAGES_DIR
@@ -85,18 +96,32 @@ def _load_unet(model_path, device=None) -> "UNet":
 
 
 @contextmanager
-def load_inpaint_pipeline(model_dir, device=None):
+def load_inpaint_pipeline(model_dir=None, device=None, use_global=True):
     """Load Stable Diffusion inpainting pipeline with GPU support.
     
     Args:
-        model_dir: Path to model directory
-        device: Device to use ('cuda', 'cpu', or None for auto-detect)
+        model_dir: Path to model directory (optional, ignored if use_global=True and global pipeline exists)
+        device: Device to use ('cuda', 'cpu', 'mps', or None for auto-detect)
+        use_global: If True, use the global pipeline if available
     """
+    global _global_pipeline, _global_device
+    
+    # Use global pipeline if available
+    if use_global and _global_pipeline is not None:
+        try:
+            yield _global_pipeline, _global_device
+            return
+        except Exception:
+            pass
+    
     # Auto-detect device if not specified
     if device is None:
         if torch.cuda.is_available():
             device = "cuda"
             print("🚀 Using CUDA GPU")
+        elif torch.backends.mps.is_available():
+            device = "mps"
+            print("🍎 Using Apple Silicon MPS")
         else:
             try:
                 import torch_directml
@@ -107,20 +132,29 @@ def load_inpaint_pipeline(model_dir, device=None):
                 print("⚠️  Using CPU (this will be slow!)")
     
     # Use float16 for GPU, float32 for CPU
-    dtype = torch.float16 if device == "cuda" else torch.float32
+    dtype = torch.float16 if device in ["cuda", "mps"] else torch.float32
     
-    pipe = StableDiffusionInpaintPipeline.from_pretrained(
-        model_dir,
-        torch_dtype=dtype,
-        local_files_only=True
-    )
+    # Load from HuggingFace or local path
+    if model_dir and Path(model_dir).exists():
+        pipe = StableDiffusionInpaintPipeline.from_pretrained(
+            model_dir,
+            torch_dtype=dtype,
+            local_files_only=True
+        )
+    else:
+        pipe = StableDiffusionInpaintPipeline.from_pretrained(
+            "runwayml/stable-diffusion-inpainting",
+            torch_dtype=dtype,
+        )
+    
     pipe = pipe.to(device)
 
     try:
         yield pipe, device
     finally:
-        del pipe
-        _clear_torch_cache()
+        if not use_global:
+            del pipe
+            _clear_torch_cache()
 
 
 def load_unified_prompts(prompts_file: Optional[Path] = None) -> dict:
@@ -302,7 +336,7 @@ def segment_image(img_path, model_path, output_dir: Optional[Path] = None, outpu
     return _segment_and_save_mask(img_path, model_path, output_dir, output_name, device=device)
 
 # --- Step 2: Vehicle Regeneration (Stable Diffusion Inpainting) ---
-def regenerate_vehicle(img_path, mask_path, model_dir, target_prompt, source_prompt=None, negative_prompt="blurry, low quality, distorted, ugly car, deformed vehicle", output_dir: Optional[Path] = None, output_name: str = "stage2_vehicle.png", device=None):
+def regenerate_vehicle(img_path, mask_path, model_dir=None, target_prompt=None, source_prompt=None, negative_prompt="blurry, low quality, distorted, ugly car, deformed vehicle", output_dir: Optional[Path] = None, output_name: str = "stage2_vehicle.png", device=None):
     """
     Use Stable Diffusion to regenerate the vehicle (Stage 2).
     
@@ -313,13 +347,13 @@ def regenerate_vehicle(img_path, mask_path, model_dir, target_prompt, source_pro
     Args:
         img_path: Path to input image
         mask_path: Path to mask from Stage 1
-        model_dir: Path to Stable Diffusion model
+        model_dir: Path to Stable Diffusion model (optional, uses global pipeline if available)
         target_prompt: Target subject description (what you want)
         source_prompt: Source subject description (what you have) - optional, for reference
         negative_prompt: What to avoid in generation
         output_dir: Output directory
         output_name: Output filename
-        device: Device to use ('cuda', 'cpu', or None for auto-detect)
+        device: Device to use ('cuda', 'cpu', 'mps', or None for auto-detect)
     """
     # Use target prompt for inpainting
     full_prompt = _stitch_prompt(target_prompt, VEHICLE_PROMPT_SUFFIX)
@@ -329,7 +363,7 @@ def regenerate_vehicle(img_path, mask_path, model_dir, target_prompt, source_pro
         print(f"   Transforming: {source_prompt}")
         print(f"   → Target: {target_prompt}")
 
-    with load_inpaint_pipeline(model_dir, device=device) as (pipe, _):
+    with load_inpaint_pipeline(model_dir, device=device, use_global=True) as (pipe, _):
         image = _load_and_resize_image(img_path)
         mask = _load_and_resize_image(mask_path, mode="L")
 
