@@ -61,43 +61,64 @@ def _clear_torch_cache():
     gc.collect()
 
 
-def _load_unet(model_path) -> "UNet":
+def _load_unet(model_path, device=None) -> "UNet":
+    """Load UNet model with GPU support.
+    
+    Args:
+        model_path: Path to UNet model
+        device: Device to use ('cuda', 'cpu', or None for auto-detect)
+    """
+    if device is None:
+        device = "cuda" if torch.cuda.is_available() else "cpu"
+    
     unet = UNet()
     try:
-        state_dict = torch.load(model_path, map_location="cpu", weights_only=True)
+        state_dict = torch.load(model_path, map_location=device, weights_only=True)
     except TypeError:
-        state_dict = torch.load(model_path, map_location="cpu")
+        state_dict = torch.load(model_path, map_location=device)
     unet.load_state_dict(state_dict)
     unet.eval()
+    unet = unet.to(device)
     return unet
 
 
 @contextmanager
-def load_inpaint_pipeline(model_dir):
+def load_inpaint_pipeline(model_dir, device=None):
+    """Load Stable Diffusion inpainting pipeline with GPU support.
+    
+    Args:
+        model_dir: Path to model directory
+        device: Device to use ('cuda', 'cpu', or None for auto-detect)
+    """
+    # Auto-detect device if not specified
+    if device is None:
+        if torch.cuda.is_available():
+            device = "cuda"
+            print("🚀 Using CUDA GPU")
+        else:
+            try:
+                import torch_directml
+                device = torch_directml.device()
+                print("Using DirectML (AMD GPU)")
+            except Exception:
+                device = "cpu"
+                print("⚠️  Using CPU (this will be slow!)")
+    
+    # Use float16 for GPU, float32 for CPU
+    dtype = torch.float16 if device == "cuda" else torch.float32
+    
     pipe = StableDiffusionInpaintPipeline.from_pretrained(
         model_dir,
-        torch_dtype=torch.float32,
+        torch_dtype=dtype,
         local_files_only=True
     )
-
-    try:
-        import torch_directml
-        device = torch_directml.device()
-        pipe = pipe.to(device)
-        print("Using DirectML (AMD GPU)")
-    except Exception:
-        device = "cpu"
-        pipe = pipe.to(device)
-        print("Using CPU")
+    pipe = pipe.to(device)
 
     try:
         yield pipe, device
     finally:
         del pipe
-        if device != "cpu":
-            _clear_torch_cache()
-        else:
-            gc.collect()
+        _clear_torch_cache()
 
 
 def prepare_images_dir(images_dir: Optional[Path] = None):
@@ -211,15 +232,28 @@ def _segment_and_save_mask(
     model_path,
     output_dir: Optional[Path],
     output_name: str,
+    device=None,
 ):
+    """Segment image and save mask with GPU support.
+    
+    Args:
+        img_path: Path to input image
+        model_path: Path to UNet model
+        output_dir: Output directory for mask
+        output_name: Output filename for mask
+        device: Device to use ('cuda', 'cpu', or None for auto-detect)
+    """
+    if device is None:
+        device = "cuda" if torch.cuda.is_available() else "cpu"
+    
     output_dir = _resolve_output_dir(output_dir)
-    unet = _load_unet(model_path)
+    unet = _load_unet(model_path, device=device)
 
     image = _load_and_resize_image(img_path)
-    img_tensor = _image_to_tensor(image)
+    img_tensor = _image_to_tensor(image).to(device)
 
     with torch.inference_mode():
-        mask = unet(img_tensor).squeeze().numpy()
+        mask = unet(img_tensor).squeeze().cpu().numpy()
 
     mask_path = _save_mask(mask, output_dir, output_name)
 
@@ -227,19 +261,31 @@ def _segment_and_save_mask(
     _clear_torch_cache()
     return mask_path
 
-def segment_image(img_path, model_path, output_dir: Optional[Path] = None, output_name: str = "stage1_mask.png"):
-    return _segment_and_save_mask(img_path, model_path, output_dir, output_name)
+def segment_image(img_path, model_path, output_dir: Optional[Path] = None, output_name: str = "stage1_mask.png", device=None):
+    """Segment image to create mask.
+    
+    Args:
+        img_path: Path to input image
+        model_path: Path to UNet model
+        output_dir: Output directory (default: IMAGES_DIR)
+        output_name: Output filename
+        device: Device to use ('cuda', 'cpu', or None for auto-detect)
+    """
+    return _segment_and_save_mask(img_path, model_path, output_dir, output_name, device=device)
 
 # --- Step 2: Vehicle Regeneration (Stable Diffusion Inpainting) ---
-def regenerate_vehicle(img_path, mask_path, model_dir, prompt, negative_prompt="blurry, low quality, distorted, ugly car, deformed vehicle", output_dir: Optional[Path] = None, output_name: str = "stage2_vehicle.png"):
+def regenerate_vehicle(img_path, mask_path, model_dir, prompt, negative_prompt="blurry, low quality, distorted, ugly car, deformed vehicle", output_dir: Optional[Path] = None, output_name: str = "stage2_vehicle.png", device=None):
     """
     Use Stable Diffusion to regenerate the vehicle (white zone of mask).
     White in mask = vehicle to regenerate
     Black in mask = background to keep
+    
+    Args:
+        device: Device to use ('cuda', 'cpu', or None for auto-detect)
     """
     full_prompt = _stitch_prompt(prompt, VEHICLE_PROMPT_SUFFIX)
 
-    with load_inpaint_pipeline(model_dir) as (pipe, _):
+    with load_inpaint_pipeline(model_dir, device=device) as (pipe, _):
         image = _load_and_resize_image(img_path)
         mask = _load_and_resize_image(mask_path, mode="L")
 
@@ -260,25 +306,31 @@ def regenerate_vehicle(img_path, mask_path, model_dir, prompt, negative_prompt="
     return result_img, str(vehicle_output)
 
 # --- Step 3: Re-segment the edited image ---
-def segment_edited_image(img_path, model_path, output_dir: Optional[Path] = None, output_name="stage3_mask.png"):
+def segment_edited_image(img_path, model_path, output_dir: Optional[Path] = None, output_name="stage3_mask.png", device=None):
     """
     Perform segmentation again on the edited vehicle image.
     This creates a fresh mask for the newly generated vehicle.
+    
+    Args:
+        device: Device to use ('cuda', 'cpu', or None for auto-detect)
     """
-    output_path = _segment_and_save_mask(img_path, model_path, output_dir, output_name)
+    output_path = _segment_and_save_mask(img_path, model_path, output_dir, output_name, device=device)
     print(f"✓ Re-segmentation mask saved to: {output_path}")
     return output_path
 
 # --- Step 4: Background Inpainting (Stable Diffusion) ---
-def inpaint_background(img_path, mask_path, model_dir, prompt: Optional[str] = None, negative_prompt="blurry, low quality, distorted, washed out, duplicate, text, watermark, jpeg artifacts, vehicles, cars", output_dir: Optional[Path] = None, output_name: str = "stage4_final.png"):
+def inpaint_background(img_path, mask_path, model_dir, prompt: Optional[str] = None, negative_prompt="blurry, low quality, distorted, washed out, duplicate, text, watermark, jpeg artifacts, vehicles, cars", output_dir: Optional[Path] = None, output_name: str = "stage4_final.png", device=None):
     """
     Use Stable Diffusion inpainting to fill in the background (black zone of mask).
     Black in mask = background to inpaint
     White in mask = foreground to keep
+    
+    Args:
+        device: Device to use ('cuda', 'cpu', or None for auto-detect)
     """
     full_prompt = _stitch_prompt(prompt, BACKGROUND_PROMPT_SUFFIX)
 
-    with load_inpaint_pipeline(model_dir) as (pipe, _):
+    with load_inpaint_pipeline(model_dir, device=device) as (pipe, _):
         image = _load_and_resize_image(img_path)
         mask = _load_and_resize_image(mask_path, mode="L")
 
