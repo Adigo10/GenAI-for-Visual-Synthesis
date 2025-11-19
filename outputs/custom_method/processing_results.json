@@ -1,0 +1,527 @@
+[
+  {
+    "image": "000aa097d423_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_000aa097d423_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_000aa097d423_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_000aa097d423_03.jpg"
+  },
+  {
+    "image": "00ad56bf7ee6_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_00ad56bf7ee6_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_00ad56bf7ee6_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_00ad56bf7ee6_03.jpg"
+  },
+  {
+    "image": "00afb946a54c_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_00afb946a54c_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_00afb946a54c_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_00afb946a54c_03.jpg"
+  },
+  {
+    "image": "00b6aee52419_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_00b6aee52419_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_00b6aee52419_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_00b6aee52419_03.jpg"
+  },
+  {
+    "image": "00c07d49f4c5_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_00c07d49f4c5_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_00c07d49f4c5_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_00c07d49f4c5_03.jpg"
+  },
+  {
+    "image": "00d3de919651_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_00d3de919651_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_00d3de919651_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_00d3de919651_03.jpg"
+  },
+  {
+    "image": "0a0e3fb8f782_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0a0e3fb8f782_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0a0e3fb8f782_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0a0e3fb8f782_03.jpg"
+  },
+  {
+    "image": "0a2637c772c5_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0a2637c772c5_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0a2637c772c5_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0a2637c772c5_03.jpg"
+  },
+  {
+    "image": "0a2bbd5330a2_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0a2bbd5330a2_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0a2bbd5330a2_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0a2bbd5330a2_03.jpg"
+  },
+  {
+    "image": "0a382e5373db_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0a382e5373db_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0a382e5373db_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0a382e5373db_03.jpg"
+  },
+  {
+    "image": "0a39129c9f62_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0a39129c9f62_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0a39129c9f62_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0a39129c9f62_03.jpg"
+  },
+  {
+    "image": "0a392275c87d_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0a392275c87d_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0a392275c87d_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0a392275c87d_03.jpg"
+  },
+  {
+    "image": "0a63454298b8_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0a63454298b8_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0a63454298b8_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0a63454298b8_03.jpg"
+  },
+  {
+    "image": "0a6636643495_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0a6636643495_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0a6636643495_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0a6636643495_03.jpg"
+  },
+  {
+    "image": "0a732faadfe8_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0a732faadfe8_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0a732faadfe8_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0a732faadfe8_03.jpg"
+  },
+  {
+    "image": "0a84dac5df69_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0a84dac5df69_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0a84dac5df69_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0a84dac5df69_03.jpg"
+  },
+  {
+    "image": "0a92461d365d_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0a92461d365d_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0a92461d365d_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0a92461d365d_03.jpg"
+  },
+  {
+    "image": "0a943856ea46_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0a943856ea46_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0a943856ea46_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0a943856ea46_03.jpg"
+  },
+  {
+    "image": "0aa52c458e8a_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0aa52c458e8a_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0aa52c458e8a_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0aa52c458e8a_03.jpg"
+  },
+  {
+    "image": "0aa83daa6f78_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0aa83daa6f78_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0aa83daa6f78_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0aa83daa6f78_03.jpg"
+  },
+  {
+    "image": "0ab2e2edfa32_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0ab2e2edfa32_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0ab2e2edfa32_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0ab2e2edfa32_03.jpg"
+  },
+  {
+    "image": "0ab40a2fd4fc_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0ab40a2fd4fc_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0ab40a2fd4fc_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0ab40a2fd4fc_03.jpg"
+  },
+  {
+    "image": "0acfffdf94d1_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0acfffdf94d1_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0acfffdf94d1_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0acfffdf94d1_03.jpg"
+  },
+  {
+    "image": "0ad66cb03617_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0ad66cb03617_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0ad66cb03617_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0ad66cb03617_03.jpg"
+  },
+  {
+    "image": "0adb31665745_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0adb31665745_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0adb31665745_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0adb31665745_03.jpg"
+  },
+  {
+    "image": "0add11a25ebb_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0add11a25ebb_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0add11a25ebb_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0add11a25ebb_03.jpg"
+  },
+  {
+    "image": "0afd3707d6ce_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0afd3707d6ce_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0afd3707d6ce_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0afd3707d6ce_03.jpg"
+  },
+  {
+    "image": "0b033553a58a_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0b033553a58a_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0b033553a58a_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0b033553a58a_03.jpg"
+  },
+  {
+    "image": "0b0724a78f90_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0b0724a78f90_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0b0724a78f90_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0b0724a78f90_03.jpg"
+  },
+  {
+    "image": "0b352a7001b1_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0b352a7001b1_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0b352a7001b1_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0b352a7001b1_03.jpg"
+  },
+  {
+    "image": "0b42a5d3dfa0_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0b42a5d3dfa0_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0b42a5d3dfa0_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0b42a5d3dfa0_03.jpg"
+  },
+  {
+    "image": "0b42c8d2842c_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0b42c8d2842c_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0b42c8d2842c_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0b42c8d2842c_03.jpg"
+  },
+  {
+    "image": "0b46410ba9b2_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0b46410ba9b2_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0b46410ba9b2_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0b46410ba9b2_03.jpg"
+  },
+  {
+    "image": "0b6c1ec65b57_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0b6c1ec65b57_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0b6c1ec65b57_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0b6c1ec65b57_03.jpg"
+  },
+  {
+    "image": "0b73517ef85b_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0b73517ef85b_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0b73517ef85b_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0b73517ef85b_03.jpg"
+  },
+  {
+    "image": "0b8d3844583f_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0b8d3844583f_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0b8d3844583f_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0b8d3844583f_03.jpg"
+  },
+  {
+    "image": "0b9d03ec6720_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0b9d03ec6720_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0b9d03ec6720_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0b9d03ec6720_03.jpg"
+  },
+  {
+    "image": "0baa53d612d9_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0baa53d612d9_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0baa53d612d9_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0baa53d612d9_03.jpg"
+  },
+  {
+    "image": "0baa6b9543dc_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0baa6b9543dc_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0baa6b9543dc_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0baa6b9543dc_03.jpg"
+  },
+  {
+    "image": "0bb87dac6ad9_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0bb87dac6ad9_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0bb87dac6ad9_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0bb87dac6ad9_03.jpg"
+  },
+  {
+    "image": "0bd04c75ec17_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0bd04c75ec17_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0bd04c75ec17_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0bd04c75ec17_03.jpg"
+  },
+  {
+    "image": "0bd2d5c4755e_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0bd2d5c4755e_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0bd2d5c4755e_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0bd2d5c4755e_03.jpg"
+  },
+  {
+    "image": "0bdb8b1cba05_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0bdb8b1cba05_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0bdb8b1cba05_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0bdb8b1cba05_03.jpg"
+  },
+  {
+    "image": "0bdd2e625f8a_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0bdd2e625f8a_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0bdd2e625f8a_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0bdd2e625f8a_03.jpg"
+  },
+  {
+    "image": "0bdfb9967be2_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0bdfb9967be2_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0bdfb9967be2_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0bdfb9967be2_03.jpg"
+  },
+  {
+    "image": "0be425f3f46a_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0be425f3f46a_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0be425f3f46a_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0be425f3f46a_03.jpg"
+  },
+  {
+    "image": "0be7717e4b2a_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0be7717e4b2a_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0be7717e4b2a_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0be7717e4b2a_03.jpg"
+  },
+  {
+    "image": "0bf768bbffae_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0bf768bbffae_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0bf768bbffae_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0bf768bbffae_03.jpg"
+  },
+  {
+    "image": "0c1bc2f3012d_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0c1bc2f3012d_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0c1bc2f3012d_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0c1bc2f3012d_03.jpg"
+  },
+  {
+    "image": "0c3481991be4_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0c3481991be4_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0c3481991be4_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0c3481991be4_03.jpg"
+  },
+  {
+    "image": "0c4659adc7e4_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0c4659adc7e4_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0c4659adc7e4_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0c4659adc7e4_03.jpg"
+  },
+  {
+    "image": "0c56c040a690_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0c56c040a690_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0c56c040a690_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0c56c040a690_03.jpg"
+  },
+  {
+    "image": "0c73bef70ead_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0c73bef70ead_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0c73bef70ead_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0c73bef70ead_03.jpg"
+  },
+  {
+    "image": "0c74f69414ef_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0c74f69414ef_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0c74f69414ef_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0c74f69414ef_03.jpg"
+  },
+  {
+    "image": "0c833722fc9d_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0c833722fc9d_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0c833722fc9d_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0c833722fc9d_03.jpg"
+  },
+  {
+    "image": "0c8f105618d4_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0c8f105618d4_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0c8f105618d4_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0c8f105618d4_03.jpg"
+  },
+  {
+    "image": "0c9265af0ddf_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0c9265af0ddf_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0c9265af0ddf_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0c9265af0ddf_03.jpg"
+  },
+  {
+    "image": "0c992d7d6742_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0c992d7d6742_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0c992d7d6742_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0c992d7d6742_03.jpg"
+  },
+  {
+    "image": "0c9a9ab8fbd2_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0c9a9ab8fbd2_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0c9a9ab8fbd2_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0c9a9ab8fbd2_03.jpg"
+  },
+  {
+    "image": "0ca342108368_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0ca342108368_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0ca342108368_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0ca342108368_03.jpg"
+  },
+  {
+    "image": "0cce02afe3a5_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0cce02afe3a5_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0cce02afe3a5_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0cce02afe3a5_03.jpg"
+  },
+  {
+    "image": "0cd58c993763_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0cd58c993763_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0cd58c993763_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0cd58c993763_03.jpg"
+  },
+  {
+    "image": "0cd9dc1a1681_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0cd9dc1a1681_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0cd9dc1a1681_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0cd9dc1a1681_03.jpg"
+  },
+  {
+    "image": "0cdfe597590f_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0cdfe597590f_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0cdfe597590f_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0cdfe597590f_03.jpg"
+  },
+  {
+    "image": "0ce36c1e1d16_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0ce36c1e1d16_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0ce36c1e1d16_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0ce36c1e1d16_03.jpg"
+  },
+  {
+    "image": "0cf8dfddfe3c_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0cf8dfddfe3c_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0cf8dfddfe3c_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0cf8dfddfe3c_03.jpg"
+  },
+  {
+    "image": "0d04a7b8c4bf_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0d04a7b8c4bf_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0d04a7b8c4bf_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0d04a7b8c4bf_03.jpg"
+  },
+  {
+    "image": "0d0be8f77fa8_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0d0be8f77fa8_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0d0be8f77fa8_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0d0be8f77fa8_03.jpg"
+  },
+  {
+    "image": "0d24b7bea210_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0d24b7bea210_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0d24b7bea210_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0d24b7bea210_03.jpg"
+  },
+  {
+    "image": "0d4b67f458bb_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0d4b67f458bb_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0d4b67f458bb_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0d4b67f458bb_03.jpg"
+  },
+  {
+    "image": "0d549ae73675_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0d549ae73675_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0d549ae73675_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0d549ae73675_03.jpg"
+  },
+  {
+    "image": "0d851b7c73f4_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0d851b7c73f4_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0d851b7c73f4_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0d851b7c73f4_03.jpg"
+  },
+  {
+    "image": "0d97ffd34927_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0d97ffd34927_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0d97ffd34927_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0d97ffd34927_03.jpg"
+  },
+  {
+    "image": "0d9d1a5c7e0c_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0d9d1a5c7e0c_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0d9d1a5c7e0c_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0d9d1a5c7e0c_03.jpg"
+  },
+  {
+    "image": "0d9ed6bc4c7b_03.jpg",
+    "status": "success",
+    "stage1_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage1_mask_0d9ed6bc4c7b_03.jpg",
+    "stage3_mask": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/stage3_mask_0d9ed6bc4c7b_03.jpg",
+    "final": "/content/GenAI-for-Visual-Synthesis/outputs/custom_method/final_0d9ed6bc4c7b_03.jpg"
+  }
+]
