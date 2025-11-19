@@ -1,4 +1,5 @@
 torch
+torchvision
 pillow
 numpy
 diffusers
@@ -8,3 +9,12 @@ safetensors
 fastapi
 uvicorn[standard]
 python-multipart
+
+# Evaluation dependencies
+torchmetrics
+scipy
+tqdm
+ftfy
+regex
+matplotlib
+git+https://github.com/openai/CLIP.git
