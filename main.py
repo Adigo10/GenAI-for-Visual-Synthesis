@@ -336,7 +336,7 @@ def segment_image(img_path, model_path, output_dir: Optional[Path] = None, outpu
     return _segment_and_save_mask(img_path, model_path, output_dir, output_name, device=device)
 
 # --- Step 2: Vehicle Regeneration (Stable Diffusion Inpainting) ---
-def regenerate_vehicle(img_path, mask_path, model_dir=None, target_prompt=None, source_prompt=None, negative_prompt="blurry, low quality, distorted, ugly car, deformed vehicle", output_dir: Optional[Path] = None, output_name: str = "stage2_vehicle.png", device=None):
+def regenerate_vehicle(img_path, mask_path, model_dir=None, prompt=None, target_prompt=None, source_prompt=None, negative_prompt="blurry, low quality, distorted, ugly car, deformed vehicle", output_dir: Optional[Path] = None, output_name: str = "stage2_vehicle.png", device=None):
     """
     Use Stable Diffusion to regenerate the vehicle (Stage 2).
     
@@ -348,20 +348,22 @@ def regenerate_vehicle(img_path, mask_path, model_dir=None, target_prompt=None, 
         img_path: Path to input image
         mask_path: Path to mask from Stage 1
         model_dir: Path to Stable Diffusion model (optional, uses global pipeline if available)
-        target_prompt: Target subject description (what you want)
+        prompt: Vehicle prompt (simple form)
+        target_prompt: Target subject description (what you want) - for unified prompts
         source_prompt: Source subject description (what you have) - optional, for reference
         negative_prompt: What to avoid in generation
         output_dir: Output directory
         output_name: Output filename
         device: Device to use ('cuda', 'cpu', 'mps', or None for auto-detect)
     """
-    # Use target prompt for inpainting
-    full_prompt = _stitch_prompt(target_prompt, VEHICLE_PROMPT_SUFFIX)
+    # Use target_prompt if provided (unified prompts), otherwise use prompt
+    vehicle_prompt = target_prompt if target_prompt else prompt
+    full_prompt = _stitch_prompt(vehicle_prompt, VEHICLE_PROMPT_SUFFIX)
     
     # Print transformation info
     if source_prompt:
         print(f"   Transforming: {source_prompt}")
-        print(f"   → Target: {target_prompt}")
+        print(f"   → Target: {vehicle_prompt}")
 
     with load_inpaint_pipeline(model_dir, device=device, use_global=True) as (pipe, _):
         image = _load_and_resize_image(img_path)
@@ -383,7 +385,66 @@ def regenerate_vehicle(img_path, mask_path, model_dir=None, target_prompt=None, 
 
     return result_img, str(vehicle_output)
 
-# --- Entire Workflow (Two-Stage Custom Pipeline) ---
+# --- Step 3: Re-segment the edited image ---
+def segment_edited_image(img_path, model_path, output_dir: Optional[Path] = None, output_name="stage3_mask.png", device=None):
+    """
+    Perform segmentation again on the edited vehicle image (Stage 3).
+    This creates a fresh mask for the newly generated vehicle.
+    
+    Args:
+        img_path: Path to edited vehicle image from Stage 2
+        model_path: Path to UNet model
+        output_dir: Output directory (default: IMAGES_DIR)
+        output_name: Output filename
+        device: Device to use ('cuda', 'cpu', or None for auto-detect)
+    """
+    output_path = _segment_and_save_mask(img_path, model_path, output_dir, output_name, device=device)
+    return output_path
+
+# --- Step 4: Background Inpainting (Stable Diffusion) ---
+def inpaint_background(img_path, mask_path, model_dir=None, prompt: Optional[str] = None, negative_prompt="blurry, low quality, distorted, washed out, duplicate, text, watermark, jpeg artifacts, vehicles, cars", output_dir: Optional[Path] = None, output_name: str = "stage4_final.png", device=None):
+    """
+    Use Stable Diffusion inpainting to fill in the background (Stage 4).
+    Black in mask = background to inpaint
+    White in mask = foreground to keep
+    
+    Args:
+        img_path: Path to edited vehicle image from Stage 2
+        mask_path: Path to mask from Stage 3
+        model_dir: Path to Stable Diffusion model (optional, uses global pipeline if available)
+        prompt: Background description
+        negative_prompt: What to avoid in generation
+        output_dir: Output directory
+        output_name: Output filename
+        device: Device to use ('cuda', 'cpu', 'mps', or None for auto-detect)
+    """
+    full_prompt = _stitch_prompt(prompt, BACKGROUND_PROMPT_SUFFIX)
+
+    with load_inpaint_pipeline(model_dir, device=device, use_global=True) as (pipe, _):
+        image = _load_and_resize_image(img_path)
+        mask = _load_and_resize_image(mask_path, mode="L")
+
+        # Invert mask: white = keep (vehicle), black = inpaint (background)
+        mask_array = np.array(mask)
+        inverted_mask = 255 - mask_array
+        mask_inverted = Image.fromarray(inverted_mask).convert("L")
+
+        result_img = pipe(
+            prompt=full_prompt,
+            negative_prompt=negative_prompt,
+            image=image,
+            mask_image=mask_inverted,
+            num_inference_steps=SD_INFERENCE_STEPS,
+            guidance_scale=SD_GUIDANCE_SCALE
+        ).images[0]
+
+    output_dir = _resolve_output_dir(output_dir)
+    final_output = output_dir / output_name
+    result_img.save(final_output)
+
+    return result_img, str(final_output)
+
+# --- Entire Workflow (Four-Stage Custom Pipeline) ---
 if __name__ == "__main__":
     # Configuration
     img_path = "0a2bbd5330a2_03.jpg"
@@ -397,12 +458,12 @@ if __name__ == "__main__":
     sd_model_path = (
         model_folder
         / "stable-diffusion"
-        / "models--runwayml--stable-diffusion-v1-5"
+        / "models--runwayml--stable-diffusion-inpainting"
         / "snapshots"
         / "451f4fe16113bff5a5d2269ed5ad43b0592e9a14"
     )
 
-    print("Starting Two-Stage Custom Pipeline...")
+    print("Starting Four-Stage Custom Pipeline...")
     print("="*60)
     
     # Load unified prompts
@@ -413,30 +474,33 @@ if __name__ == "__main__":
         prompts = unified_prompts[img_name]
         source_subject = prompts.get("source_subject", "a car")
         target_subject = prompts.get("target_subject", "a sleek modern sports car")
+        background_prompt = prompts.get("background", "sunlit alpine highway")
         original_caption = prompts.get("original_caption", "")
         
         print(f"\n📝 Using prompts for {img_name}:")
         print(f"   Original: {original_caption}")
         print(f"   Source: {source_subject}")
         print(f"   Target: {target_subject}")
+        print(f"   Background: {background_prompt}")
     else:
         print(f"\n⚠️  No prompts found for {img_name}, using defaults")
         source_subject = "a car"
         target_subject = "a sleek modern sports car"
+        background_prompt = "sunlit alpine highway"
     
     # Ensure images directory exists and is cleared
     prepare_images_dir(IMAGES_DIR)
     
     print("\n" + "="*60)
-    print("STAGE 1: Vehicle Segmentation (UNet)")
+    print("STAGE 1: Initial Vehicle Segmentation (UNet)")
     print("="*60)
     print("Purpose: Identify vehicle region in original image")
     print(f"Input: {img_path}")
     mask_path = segment_image(img_path, unet_path)
-    print(f"✓ Mask saved to: {mask_path}")
+    print(f"✓ Initial mask saved to: {mask_path}")
 
     print("\n" + "="*60)
-    print("STAGE 2: Vehicle Inpainting (Stable Diffusion)")
+    print("STAGE 2: Vehicle Regeneration (Stable Diffusion)")
     print("="*60)
     print("Purpose: Transform source vehicle → target vehicle")
     print(f"Input: {img_path} + {mask_path}")
@@ -450,11 +514,35 @@ if __name__ == "__main__":
     print(f"✓ Edited vehicle saved to: {vehicle_path}")
 
     print("\n" + "="*60)
-    print("🎉 Two-Stage Pipeline Complete!")
+    print("STAGE 3: Re-segmentation of Edited Vehicle (UNet)")
+    print("="*60)
+    print("Purpose: Create fresh mask for the newly generated vehicle")
+    print(f"Input: {vehicle_path}")
+    new_mask_path = segment_edited_image(vehicle_path, unet_path, output_name="stage3_mask.png")
+    print(f"✓ Re-segmentation mask saved to: {new_mask_path}")
+
+    print("\n" + "="*60)
+    print("STAGE 4: Background Inpainting (Stable Diffusion)")
+    print("="*60)
+    print("Purpose: Generate new background around the edited vehicle")
+    print(f"Input: {vehicle_path} + {new_mask_path}")
+    print(f"Prompt: {background_prompt}")
+    final_img, final_path = inpaint_background(
+        vehicle_path, 
+        new_mask_path, 
+        sd_model_path, 
+        prompt=background_prompt
+    )
+    print(f"✓ Final image with inpainted background saved to: {final_path}")
+
+    print("\n" + "="*60)
+    print("🎉 Four-Stage Pipeline Complete!")
     print("="*60)
     print("\nPipeline Summary:")
-    print(f"  Stage 1 (Segmentation): {IMAGES_DIR / 'stage1_mask.png'}")
-    print(f"  Stage 2 (Vehicle Edit): {IMAGES_DIR / 'stage2_vehicle.png'}")
+    print(f"  Stage 1 (Initial Segmentation): {IMAGES_DIR / 'stage1_mask.png'}")
+    print(f"  Stage 2 (Vehicle Regeneration): {IMAGES_DIR / 'stage2_vehicle.png'}")
+    print(f"  Stage 3 (Re-segmentation): {IMAGES_DIR / 'stage3_mask.png'}")
+    print(f"  Stage 4 (Background Inpainting): {IMAGES_DIR / 'stage4_final.png'}")
     print(f"\nTransformation:")
-    print(f"  From: {source_subject}")
-    print(f"  To:   {target_subject}")
+    print(f"  Vehicle: {source_subject} → {target_subject}")
+    print(f"  Background: {background_prompt}")
